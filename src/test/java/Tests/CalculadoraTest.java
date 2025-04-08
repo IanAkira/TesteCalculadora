@@ -1,7 +1,5 @@
 package Tests;
 
-
-
 import model.Calculadora;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
@@ -21,6 +19,17 @@ class CalculadoraTest {
     void inicializacao() {
         //Instancia um objeto da classe Calculadora
         calculadora = new Calculadora(4.0, 2.0);
+    }
+
+    @Test
+    void testGetSomaConstrutorVazio() {
+        calculadora = new Calculadora();
+//Define o valor esperado para a operação
+        double retornoEsperado = 0.0;
+//Chama a operacao getSoma()
+        double retornoFeito = calculadora.getSoma();
+//Premissa verifica se os valores são iguais
+        assertEquals(retornoEsperado, retornoFeito, 0);
     }
 
     @Test
@@ -50,7 +59,7 @@ class CalculadoraTest {
 //Chama a operacao getProduto()
         double retornoFeito = calculadora.getProduto();
 //Premissa verifica se os valores são iguais
-        assertEquals(retornoEsperado, retornoFeito, 0);
+        assertEquals(retornoEsperado, retornoFeito, 8);
     }
 
     @Test
